@@ -1,0 +1,154 @@
+#calendar {
+    background-image: url(/assets/couple_eating_out.jpg); 
+    text-align: center;
+    width: 100%;
+}
+
+#frame {
+    width: 50%;
+    position: fixed;
+    top: 43%;
+    z-index: 2; 
+}
+
+.hint-wrapper {
+    transform: translateX(-125px);
+    color: #ffd740;
+    font-size: 20px !important;
+    text-align: right;
+    width: fit-content;
+}
+.hint-wrapper p {
+    margin: 0 !important;
+    font-weight: 900;
+}
+.hint-wrapper mat-icon {
+    font-size: 3em;
+    color: #ffd740;
+    transform: translateX(-20px);
+}
+.title {
+    font-family: 'Lobster' ,cursive;
+    color:white;
+    font-size: 60px;
+}
+
+.container {
+    height: 100vh;
+    width: 50%;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+}
+
+.date-title {
+    font-size: 2em;
+    color:#ffd740;
+    width: 100%;
+    border-bottom:#ffd740 2px solid;
+}
+
+.date-title p {
+    margin: 0 !important;
+}
+
+.card {
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+mat-card-content {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+}
+
+.left-tile {
+    border-right: #38006b 2px solid;
+}
+.info-wrapper {
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+}
+.left-info-wrapper {
+    padding: 40px;
+}
+.small-tile {
+    margin: 0 auto;
+    text-align: center;
+}
+.small-tile p {
+    margin: 0;
+}
+.small-tile mat-icon {
+    font-size: 4em;
+    height: fit-content;
+    width: fit-content;
+}
+ul {
+    padding-inline-start: 20px !important;
+}
+
+.row {
+    display: flex;
+    width: 96%;
+    justify-content: space-between;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.status-wrapper {
+    display: flex;
+    height: fit-content;
+    align-self: center;
+}
+.status-wrapper p {
+    margin: 0;
+    transform: translateY(4px);
+    margin-left: 3px;
+    color: #673ab7;
+}
+
+.time-wrapper {
+    background: #ffd740;
+    border-radius: 25px;
+    display: flex;
+    height: fit-content;
+    align-self: center;
+    margin-left: 10px;
+}
+
+.flex {
+    display: flex;
+}
+
+.time {
+    margin: 10px;
+    color: #fff;
+    font-weight: 900;
+}
+.joinedmembers button {
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    cursor: hand;
+    font-family: Arial;
+  }
+  
+  .joinedmembers button.report {
+    position: relative;
+    color:#ffd740 !important;
+    background-color: #bb0000 !important;
+  }
+  
+  .joinedmembers button.unsubscribe {
+    position: relative;
+    margin-top: 10px;
+    color:#ffd740 !important;
+    background-color: #bb0000 !important;
+  }
+  .example-form-field {
+    width: auto;
+    height: auto;
+  }

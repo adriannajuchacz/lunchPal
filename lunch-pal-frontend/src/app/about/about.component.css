@@ -1,0 +1,14 @@
+.center{
+    text-align: center;
+    margin-top: 3%;
+    color:#ffd740;
+    padding:0px 400px;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+
+/*background image*/
+#about{
+    background-image: url(/assets/about_backg.jpg);
+}

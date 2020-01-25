@@ -1,0 +1,104 @@
+<div id="userInput" class="background-picture">
+  <div class="container" style=" text-align: center">
+    <div class="card">
+      <div class="face face1">
+        <h3 class="card_question">When are you available ?</h3>
+        <div class="row user-input-row">
+          <div class="col" style="display: inline">
+            <div style="display: inline">
+
+        <mat-form-field class="example-full-width">
+          <input matInput [matDatepicker]="picker" [min]="minDay" [(ngModel)]="selectedDay" placeholder="Choose a date"
+            readonly>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <div>
+          <mat-form-field class="example-full-width">
+            <mat-label>Choose the start time</mat-label>
+            <input matInput [min]="'07:00'" [max]="'17:00'" [ngxTimepicker]="timePicker" [format]="24" [(ngModel)]="selectedStartTime" readonly>
+            <ngx-material-timepicker #timePicker></ngx-material-timepicker>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="example-full-width">
+            <mat-label>Choose the end time</mat-label>
+            <input matInput [min]="'07:00'" [max]="'17:00'" [ngxTimepicker]="timePicker2" [format]="24" [(ngModel)]="selectedEndTime" readonly>
+            <ngx-material-timepicker #timePicker2></ngx-material-timepicker>
+          </mat-form-field>
+        </div>
+      </div>
+      <div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="face face2">
+    <h2>step 1</h2>
+  </div>
+  </div>
+  <div class="card">
+  <div class="face face1">
+  <h3 class="card_question">Where would you like to eat ?</h3>
+  <div class="row user-input-row">
+    <mat-form-field>
+      <mat-label>Choose a Mensa</mat-label>
+      <mat-select (selectionChange)="selectMensa($event)">
+        <mat-option *ngFor="let mensa of mensas" [value]="mensa">
+          {{mensa}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  </div>
+  <div class="face face2">
+    <h2>step 2</h2>
+  </div>
+  </div>
+  <div class="card">
+      <div class="face face1">
+  <h3 class="card_question">With how many people would you like to eat ?</h3>
+  <div class="row user-input-row">
+    <mat-form-field>
+      <mat-label>Number of people</mat-label>
+      <mat-select (selectionChange)="selectNumberOfPeople($event)">
+        <mat-option *ngFor="let number of numberOfPeople" [value]="number">
+          {{number}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  </div>
+  <div class="face face2">
+    <h2>step 3</h2>
+  </div>
+  </div>
+  <div class="card">
+      <div class="face face1">
+  <h3 class="card_question">Which Interset do you have for the lunch ?</h3>
+  <div class="row user-input-row">
+    <mat-form-field>
+      <mat-label>Interset</mat-label>
+      <mat-select (selectionChange)="selectInteresReader($event)" multiple>
+        <mat-option *ngFor="let inf of interests" [value]="inf">
+          {{inf}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  </div>
+  <div class="face face2">
+    <h2>step 4</h2>
+  </div>
+  </div>
+  
+</div>
+<div class="row btn_container">
+    <button mat-raised-button id="login_btn" (click)="createLunchPal()">
+        Find a lunchPal
+    </button>
+    <button mat-raised-button id="cancel_btn" (click)="cancel()">
+        cancel
+    </button>
+    </div>
+</div>

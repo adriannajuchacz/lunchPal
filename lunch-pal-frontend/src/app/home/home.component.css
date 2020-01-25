@@ -1,0 +1,45 @@
+.login_title{
+ font-size:50px;
+ color:#38006b;
+ border-bottom: solid 5px #ffd740;
+ width:50px;
+}
+.btn{
+  width:250px;
+  height:60px;
+  font-size: 25px;
+  background-color: #ffd740 !important;
+  color:#38006b !important;
+  margin-left: 15px;
+}
+
+.btn:hover{
+ background-color:yellow !important;
+}
+
+
+input{
+ font-size: 20px;
+ color:#6a1b9a;
+}
+
+.custom_p{
+  font-size:20px;
+  font-family: 'Roboto',sans-serif;
+  color:white;
+}
+h2{
+  font-family: 'Lobster' ,cursive;
+  color:white;
+  font-size: 60px; 
+}
+.content {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 25vh;
+}
+/*background image*/
+#home{
+  background-image: url(/assets/home.jpg);
+}

@@ -1,0 +1,96 @@
+<div id="calendar" class="background-picture">
+  <div class="background-overlay">
+    <h2 class="title">My calendar</h2>
+    <div class="container">
+        <div id="frame">
+          <div class="hint-wrapper">
+            <mat-icon matSuffix color="primary">arrow_upward</mat-icon>
+            <p>old</p>
+            <p>coming</p>
+            <mat-icon matSuffix color="primary">arrow_downward</mat-icon>
+          </div>
+        </div>
+      <div *ngFor="let lunchpal of this.lunchPals">
+        <div id="{{lunchpal.dayString === 'today' ? 'today': ''}}" class="date-title">
+          <p>{{toDayString(lunchpal.day)}}</p>
+        </div>
+        <mat-card class="card">
+            <mat-card-content fxLayoutGap="10px">
+              <div class="row">
+                <div class="flex">
+                  <p>time:</p>
+                  <div class="time-wrapper">    
+                      <p class="time">{{lunchpal.starttime}} - {{lunchpal.endtime}}</p>
+                  </div>
+                </div>
+                <div class="status-wrapper">
+                    <ng-template [ngIf]="lunchpal.status == 'expired'">
+                        <mat-icon matSuffix color="primary">history</mat-icon>
+                      </ng-template>
+                      <ng-template [ngIf]="lunchpal.status == 'waiting'">
+                        <mat-icon matSuffix color="primary">cached</mat-icon>
+                      </ng-template>
+                      <ng-template [ngIf]="lunchpal.status == 'matched'">
+                        <mat-icon matSuffix color="primary">check_circle</mat-icon>
+                      </ng-template>
+                      <p>{{lunchpal.status}}</p>
+                </div>             
+              </div>
+                <mat-grid-list cols="3">
+                    <mat-grid-tile>
+                      <div class="small-tile">
+                        <p>matching interests</p>
+                        <mat-icon matSuffix color="primary">category</mat-icon>
+                        <p>{{lunchpal.interests.length}}</p>
+                      </div>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                      <div class="small-tile">
+                        <p>lunchPals</p>
+                        <mat-icon matSuffix color="primary">group</mat-icon>
+                        <p>{{lunchpal.currentpals}}</p>
+                      </div>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                      <div class="small-tile">
+                        <p>location</p>
+                        <mat-icon matSuffix color="primary">place</mat-icon>
+                        <p>{{lunchpal.mensa}}</p>
+                      </div>
+                    </mat-grid-tile>
+                  </mat-grid-list>
+                  <div class="row">
+                      <div class="flex">
+                        <p>matching interests:</p>
+                        <div class="time-wrapper" *ngFor="let int of lunchpal.interests">    
+                            <p class="time">{{int}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  <div class="row">
+                    <p>your lunchPals:</p>
+                  </div>              
+                  <mat-accordion class="joinedmembers">
+                    <mat-expansion-panel *ngFor="let joinedMember of lunchpal.users;let index = index;">
+                      <mat-expansion-panel-header *ngIf = "joinedMember != userSrv.user.first_name">  
+                        {{joinedMember}}
+                      </mat-expansion-panel-header>
+                      <mat-form-field class="example-form-field" *ngIf="!reportedUsers.includes(joinedMember)">
+                        <input matInput type="text" placeholder="Comment" [(ngModel)]="comment" name="comment" required><!-- [formControl]="commentFormControl" [(ngModel)]="comment" -->
+                      </mat-form-field>
+                      <button class="report" *ngIf="!reportedUsers.includes(joinedMember)" title="report {{joinedMember}}" (click)="report(joinedMember)">
+                        report
+                      </button>
+                      <p *ngIf="reportSuccMsg">{{reportSuccMsg}}</p>
+                      <p *ngIf="reportErrMsg && !reportSuccMsg">{{reportErrMsg}}</p>
+                    </mat-expansion-panel>
+                    <button class="unsubscribe" title="unsubscribe {{joinedMember}}" (click)="unsub(lunchpal._id)">
+                      unsubscribe
+                    </button>
+                  </mat-accordion>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

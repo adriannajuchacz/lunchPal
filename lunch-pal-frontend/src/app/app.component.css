@@ -1,0 +1,13 @@
+html{
+    height:100%;
+}
+body{
+    background-color:white; 
+    min-height: 100vh;
+    position: relative;
+}
+app-header {
+    position: fixed;
+    width: 100vw;
+    z-index: 1;
+}

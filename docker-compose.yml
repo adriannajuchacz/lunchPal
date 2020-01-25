@@ -1,0 +1,28 @@
+version: "2.0"
+services:
+  lunch-pal-frontend:
+    container_name: lunch-pal-frontend
+    build:
+      context: ./lunch-pal-frontend
+    ports:
+      - "4200:4200"
+    volumes:
+      -  /usr/src/app/node_modules
+      - ./lunch-pal-frontend:/usr/src/app
+
+  lunch-pal-backend:
+    container_name: lunch-pal-backend
+    build:
+      context: ./lunch-pal-backend
+    ports:
+      - "3000:3000"
+    volumes:
+      -  /usr/src/app/node_modules
+      - ./lunch-pal-backend:/usr/src/app
+
+  lunch-pal-db:
+    container_name: lunch-pal-db
+    image: mongo
+    ports: 
+      - "27017:27017"
+    

@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+body{
+    font-family:'Roboto', sans-serif;
+    margin:0;
+
+}
+
+
+
+@font-face{
+  font-family:'Roboto', sans-serif;
+  font-family: 'Lobster',cursive;
+  @import url('https://fonts.googleapis.com/css?family=Lobster|Roboto&display=swap');
+
+}
+
+body {
+   overflow: hidden;
+}
+
+.background-picture {
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  top: 84px;
+  bottom:0;
+  width: 100%;
+}
+.background-overlay {
+  position: fixed;
+  background-color: rgba(106, 27, 154, 0.65);
+  bottom:0;
+  height: calc(100vh - 84px);
+  width:100%;
+  overflow-y: scroll;
+  top: 84px;
+}

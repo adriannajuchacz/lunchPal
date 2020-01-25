@@ -1,0 +1,29 @@
+<mat-card-actions fxLayout="row" fxLayoutAlign="center center">
+  <mat-card-content fxLayoutGap="10px">
+    <h2>Reports</h2>
+    <p class="custom_p" *ngIf="reports.length === 0">No reports found.</p>
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let report of reports">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="mat-box-intro">
+            {{report.reporter}} reported {{report.reportee}}
+            <!-- on {{report.date.getDate()<10?'0'+report.date.getDate():report.date.getDate()}}.{{report.date.getMonth()<9?'0'+(report.date.getMonth()+1):(report.date.getMonth()+1)}}.{{report.date.getFullYear()}} -->
+          </mat-panel-title>
+          <!-- <mat-panel-description class="mat-box-intro">
+          </mat-panel-description> -->
+        </mat-expansion-panel-header>
+        <p>with comment: {{report.comment}}</p>
+        <div class="row btn_container">
+          <button mat-raised-button id="cancel_btn" (click)="blockUser(report)">
+            block {{report.reportee}}
+          </button>
+          <!-- <button *ngIf="!report.blocked" mat-raised-button id="cancel_btn" (click)="blockUser(report)">
+            block {{report.reportee}}
+          </button>
+          <div *ngIf="report.blocked">User ist blocked</div> -->
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-card-content>
+</mat-card-actions>
+

@@ -1,0 +1,16 @@
+.center{
+    text-align: center;
+    color:#ffd740;
+    font-size:19px;
+    font-weight: 900;
+    overflow: hidden;
+}
+ul{
+    list-style-type: none; 
+}
+.title {
+    margin: 0;
+}
+#impressum{
+    background-image: url(/assets/couple_eating_out.jpg);
+}

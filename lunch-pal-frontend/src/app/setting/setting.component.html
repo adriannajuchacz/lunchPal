@@ -1,0 +1,60 @@
+<div id="register" class="background-picture">
+<div>
+<!--FlexLayout Test-->
+<div fxLayout="row" gdAlignColumns="start stretch" >
+    <div fxLayout="column" fxLayoutAlign="center center" style="height:80vh; ">
+      <mat-card class="register_card">
+        <form class="register_form">
+          <mat-card-title class="register_title">
+            Setting
+          </mat-card-title>
+
+     <mat-card-content fxLayoutGap="10px">
+       <p>
+         <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder="First Name"  [(ngModel)]="firstname" name="firstname" required>
+        <mat-icon matSuffix color="primary"> sentiment_very_satisfied</mat-icon>
+         </mat-form-field>
+       </p>
+       <p>
+          <mat-form-field appearance="outline">
+         <mat-label>Last Name</mat-label>
+         <input matInput placeholder="Last Name"  [(ngModel)]="lastname" name="lastname" required>
+         <mat-icon matSuffix color="primary">sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline">
+           <mat-label>Email</mat-label>
+           <input matInput placeholder="Email"  [(ngModel)]="email" name="email" required>
+           <mat-icon matSuffix color="primary">sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+          </p>
+          <p>
+              <mat-form-field appearance="outline">
+             <mat-label>Password</mat-label>
+             <input matInput placeholder="Password" [(ngModel)]="password" name="password" type=password required>
+             <mat-icon matSuffix color="primary" >sentiment_very_satisfied</mat-icon>   </mat-form-field>
+            </p>
+            <div *ngIf="warningMsg!=''" class="notification" ><mat-icon matSuffix id="warning_icon">warning</mat-icon>
+              <p style="text-align:justify-all"  name="warning">{{warningMsg}} </p></div>
+              <div *ngIf="successMsg!=''" class="notification" ><mat-icon matSuffix id="success_icon">done_outline</mat-icon>
+                <p style="text-align:justify-all ;color:green"  name="success">{{successMsg}}</p></div>
+     </mat-card-content>
+     <mat-card-actions fxLayout="row" fxLayoutAlign="center center">
+       <button mat-raised-button id="register_btn" (click)="updateUser()">
+       Update User!
+       </button>
+
+     </mat-card-actions>
+
+
+      </form>
+
+      </mat-card>
+    </div>
+
+    </div>
+</div>
+</div>

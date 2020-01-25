@@ -1,0 +1,34 @@
+
+<div class="menu">
+        <mat-toolbar class="toolbar">
+          <!-- <a *ngIf="username != ''" [routerLink]="['/home']">
+            <img src="/assets/LogoMakr_9wMjt7.png" alt="LunchPal">
+            <div id="header_title" style="font-family:'Lobster',cursive;font-size: 35px;color:#38006b;padding-left:10px">LunchPal</div>
+          </a>
+          <a *ngIf="username == ''" [routerLink]="['/']">
+            <img src="/assets/LogoMakr_9wMjt7.png" alt="LunchPal">
+            <div id="header_title" style="font-family:'Lobster',cursive;font-size: 35px;color:#38006b;padding-left:10px">LunchPal</div>
+          </a> -->
+              <a  [routerLink]="['/']"><img src="/assets/LogoMakr_9wMjt7.png" alt="LunchPal"></a>
+                <div id="header_title" style="font-family:'Lobster',cursive;font-size: 35px;color:#38006b;padding-left:10px"><a  [routerLink]="['/']">LunchPal</a></div>
+
+                <span class="spacer"></span>
+                <button  *ngIf="getLoginStatus() && userIsAdmin()" mat-button color="accent" [routerLink]="['/admin']">Reports</button>
+                <button  mat-button color="accent" [routerLink]="['/about']">About</button>
+                <button  mat-button color="accent" [routerLink]="['/impressum']">Impressum </button>
+                <button *ngIf="getLoginStatus()" mat-button [matMenuTriggerFor]="menu" (menuClosed)="closeMenu($event)" (menuOpened)="openMenu($event)">
+                  <mat-icon matSuffix color="primary">account_circle</mat-icon>
+                  {{getUserFirstName()}}
+                  <mat-icon *ngIf="menuClosed; else arrow_up" matSuffix color="primary">keyboard_arrow_down</mat-icon>
+                  <ng-template #arrow_up>
+                    <mat-icon matSuffix color="primary">keyboard_arrow_up</mat-icon>
+                  </ng-template>
+                </button>
+                <mat-menu #menu="matMenu" xPosition="before">
+                  <button mat-menu-item [routerLink]="['/home']">Home</button>
+                  <button mat-menu-item [routerLink]="['/calendar']">My calendar</button>
+                  <button [routerLink]="['/setting']" mat-menu-item>Settings</button>
+                  <button (click)="logout()" mat-menu-item>Logout</button>
+                </mat-menu>
+              </mat-toolbar>
+            </div>

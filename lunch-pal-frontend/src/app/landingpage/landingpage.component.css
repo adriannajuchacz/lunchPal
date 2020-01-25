@@ -1,0 +1,89 @@
+   
+  .header-filter{
+      position: relative;
+    
+  }
+
+  h1{
+      font-family: 'Lobster' ,cursive;
+      color:white;
+      font-size: 60px;
+  }
+  div.h6{
+    
+        max-width:800px;
+        margin: auto;
+     
+    
+  }
+  .h6{
+   font-family: 'Roboto',sans-serif;
+   color:white;
+   font-size:20px;
+   display: block;
+   line-height: 1.4;
+   max-width: 90%;
+  }
+
+  section {
+     display: block;
+     height: 100%;
+     width:100%;
+    padding-left:130px;
+  
+    box-sizing:border-box;
+  }
+  .mat-button{
+    margin:10px;
+    height: 50px;
+    font-size: 22px;
+    background-color:#ffd740;
+    margin-inline-start: 0px;
+    border:none;
+    width:170px;
+    
+}
+.mat-button:hover{
+    background-color:yellow !important; 
+   
+}
+button.mat-button{
+    margin-right:30px;
+}
+
+
+ section{
+     width:100%;
+     min-height:90vh; 
+ }
+ .wave{
+     position:relative;
+     background:linear-gradient(90deg,#6a1b9a,#6a1b9a);
+ }
+ .wave:before{
+     content:'';
+     position:absolute;
+     bottom:0;
+     left:0;
+     width:100%;
+     height:400px;
+     background:url(/assets/wave.png);
+     background-size:cover;
+     background-repeat: no-repeat;
+
+ }
+ .lunchpal-logo{
+     width:80px;
+ }
+ /*background image*/
+#landingpage{
+    background-image: url(/assets/landing_backg.jpg);    
+}
+#hero-overlay{
+    position:absolute;
+    background-color: rgb(106, 27, 154,0.65);
+    top:0;
+    bottom:0;
+    height:100%;
+    width:100%;
+}

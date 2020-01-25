@@ -1,0 +1,49 @@
+<div id="login" class="background-picture">
+<!--FlexLayout Test-->
+<div fxLayout="row" gdAlignColumns="start stretch" >
+<div fxLayout="column" fxLayoutAlign="center center" style="height:80vh; ">
+  <mat-card class="login_card">
+    <form class="login_form">
+      <mat-card-title class="login_title">
+        Login
+      </mat-card-title>
+      <div class="center">
+          <span style="font-size:22px;line-height: 1.4; letter-spacing: normal;color:white">Welcome! Login to access LunchPal! Did you <a [routerLink]="['/reset']" style="color:#6a1b9a">forgot your password</a>?</span>
+          </div>
+ <mat-card-content fxLayoutGap="10px">
+   <p>
+     <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Email"  [(ngModel)]="email" name="email" required>
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+     </mat-form-field>
+   </p>
+   <p>
+      <mat-form-field appearance="outline">
+     <mat-label>Password</mat-label>
+     <input matInput placeholder="Password" [(ngModel)]="password" name="password" type="password" required>
+     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+    </p>
+ </mat-card-content>
+ <mat-card-actions fxLayout="row" fxLayoutAlign="center center">
+   <button mat-raised-button id="login_btn" (click)="login()">
+   Login
+   </button>
+
+ </mat-card-actions>
+
+ <div *ngIf="warningMsg!=''" class="notification"><mat-icon matSuffix id="warning_icon">warning</mat-icon>
+  <p style="text-align:justify-all"  name="warning">{{warningMsg}} </p></div>
+
+ <div class="center">
+    <span style="font-size:22px;line-height: 1.4; letter-spacing: normal;color:white">
+      If you don't have an account yet, register <b><a [routerLink]="['/register']">here!</a></b></span>
+</div>
+  </form>
+
+  </mat-card>
+</div>
+</div>
+    
+</div>

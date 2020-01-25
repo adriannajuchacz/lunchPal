@@ -1,0 +1,47 @@
+
+
+/*toolbar*/
+.menu{
+    padding: 10px !important; 
+    background: #fff;
+    width: 100%;
+}
+
+.toolbar{
+  background-color:transparent;
+ 
+}
+
+/* div.menu a {
+    display: flex;
+} */
+#header-title{
+    color:#38006b;
+    font-family: 'Lobster',cursive !important;
+}
+
+img{
+    width: 70px !important;
+    display: inline;
+}
+
+/*buttons*/
+.mat-button:hover{
+    background-color: #ffd740 !important;
+    color:#38006b !important;
+
+}
+
+.mat-button{
+    margin:10px;
+    height: 50px;
+    font-size: 25px;
+    color: #38006b !important;
+    background-color:transparent !important;
+    border-bottom: solid 2px #ffd740;
+    float: right !important;
+}
+.spacer{
+    flex: 1 1 auto;
+  }
+ 
